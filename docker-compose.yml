@@ -1,0 +1,18 @@
+version: "3.8"
+
+services: # 容器
+  xp: # 服务名字，这个名字也是内部 bridge网络可以使用的 DNS name
+    image: jiujiude/phpstudy:latest # 镜像的名字
+    restart: always #容器可以随docker服务启动而启动
+    privileged: true #设置容器的权限为root
+    volumes: # 可选，相当于docker run里的 -v
+        - C:\www:/www
+    ports: # 可选，相当于 docker run里的 -p
+        - 22:22 
+        - 21:21 
+        - 80:80 
+        - 443:443 
+        - 30000:30000 
+        - 9080:9080 
+        - 30050:30050
+        - 6379:6379
